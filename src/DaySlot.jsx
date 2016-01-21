@@ -145,7 +145,7 @@ let DaySlot = React.createClass({
 
       if (eventPropGetter)
         var { style: xStyle, className } = eventPropGetter(event, start, end, _isSelected);
-
+      if(event.customClassDaySlot) className = event.customClassDaySlot;
       return (
         <div
           key={'evt_' + idx}
@@ -197,7 +197,7 @@ let DaySlot = React.createClass({
       let { step, min, max } = this.props;
       let { top, bottom } = getBoundsForNode(node)
 
-      let mins = this._totalMin;
+      let mins = this._totalMin;rbc-selected
 
       let range = Math.abs(top - bottom)
 
